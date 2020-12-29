@@ -1,27 +1,41 @@
 <template>
- <q-page>
-  <div class="row text-center">
-      <div class="col-xs-12 col-sm-6" style="padding: 1%;">
-    <q-card class="my-card">
-      <q-card-section>
-        <div class="text-h6">Unwrap WETH (WETH -> ETH)</div>
-        <div class="text-subtitle2">
-          Please note we use the official WETH contract for unwrapping.
-          <br>
-          <q-btn push color="white" @click="getBalance" text-color="primary" :label="balance" style="margin: 1%"></q-btn>
-          <q-input outlined v-model="amount" label="Please Enter Amount of WETH to Unwrap" style="margin-top: 2%;" />
-        </div>
-      </q-card-section>
+  <q-page>
+    <div class="row text-center">
+      <div class="col-xs-12 col-sm-6" style="padding: 1%">
+        <q-card class="my-card">
+          <q-card-section>
+            <div class="text-h6">Unwrap WETH (WETH -> ETH)</div>
+            <div class="text-subtitle2">
+              Please note we use the official WETH contract for unwrapping.
+              <br />
+              <q-btn
+                push
+                color="white"
+                @click="getBalance"
+                text-color="primary"
+                :label="balance"
+                style="margin: 1%"
+              ></q-btn>
+              <q-input
+                outlined
+                v-model="amount"
+                label="Please Enter Amount of WETH to Unwrap"
+                style="margin-top: 2%"
+              />
+            </div>
+          </q-card-section>
 
-      <q-separator />
+          <q-separator />
 
-      <q-card-actions class="text-center" horizontal>
-        <q-btn class="text-center" @click="unwrap" flat>Unwrap my WETH!</q-btn>
-      </q-card-actions>
-    </q-card>
-  </div>
-  </div>
- </q-page>
+          <q-card-actions class="text-center" horizontal>
+            <q-btn class="text-center" @click="unwrap" flat
+              >Unwrap my WETH!</q-btn
+            >
+          </q-card-actions>
+        </q-card>
+      </div>
+    </div>
+  </q-page>
 </template>
 <script>
 import Web3 from 'web3';
@@ -66,9 +80,13 @@ export default {
     },
     async getBalance() {
       const contract = new window.web3.eth.Contract(wETH, address);
-      contract.methods.balanceOf(this.userAccount[0]).call().then((res) => {
-        this.balance = (`${res / 1e18} WETH`);
-      });
+      contract.methods
+        .balanceOf(this.userAccount[0])
+        .call()
+        .then((res) => {
+          this.balance = `${res / 1e18} WETH`;
+          this.amount = `${res / 1e18} WETH`;
+        });
     },
     async unwrap() {
       const weiAmount = window.web3.utils.toWei(this.amount);
@@ -79,10 +97,13 @@ export default {
       );
       console.log(`Final Amount as uint256: ${finalAmount}`);
       const contract = new window.web3.eth.Contract(wETH, address);
-      contract.methods.withdraw(finalAmount).send({ from: this.userAccount[0] }).then((res) => {
-        console.log(res);
-        this.getBalance();
-      });
+      contract.methods
+        .withdraw(finalAmount)
+        .send({ from: this.userAccount[0] })
+        .then((res) => {
+          console.log(res);
+          this.getBalance();
+        });
     },
   },
 };

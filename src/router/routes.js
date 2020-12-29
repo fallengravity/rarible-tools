@@ -6,6 +6,7 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'Burn', component: () => import('pages/Burn.vue') },
       { path: 'Unwrap', component: () => import('pages/Unwrap.vue') },
+      { path: 'Cost', component: () => import('pages/Cost.vue') },
     ],
   },
 

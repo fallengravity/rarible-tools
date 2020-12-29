@@ -65,6 +65,16 @@
               </q-item-section>
             </q-item>
           </router-link>
+          <router-link to="/Cost">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-dollar-sign" />
+              </q-item-section>
+              <q-item-section>
+                Cost
+              </q-item-section>
+            </q-item>
+          </router-link>
         </q-list>
       </q-scroll-area>
     </q-drawer>
