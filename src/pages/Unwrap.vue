@@ -42,8 +42,8 @@ import Web3 from 'web3';
 import detectEthereumProvider from '@metamask/detect-provider';
 import wETH from '../assets/wABI.json';
 
-// const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
-const address = '0x0a180a76e4466bf68a7f86fb029bed3cccfaaac5';
+const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+// const address = '0x0a180a76e4466bf68a7f86fb029bed3cccfaaac5';
 const ethEnabled = () => {
   if (window.ethereum) {
     window.web3 = new Web3(window.ethereum);

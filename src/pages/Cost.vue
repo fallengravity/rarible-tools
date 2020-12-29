@@ -249,7 +249,7 @@ export default {
     this.$axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd').then((result) => {
       this.usdValue = result.data.ethereum.usd;
     });
-    this.$axios.get('https://data-api.defipulse.com/api/v1/egs/api/ethgasAPI.json?api-key=ae8c3620d6df521fa571c60daa36da239ce2cd28605baf252b91ae196008').then((res) => {
+    this.$axios.get('https://data-api.defipulse.com/api/v1/egs/api/ethgasAPI.json?api-key=09d37849af10812f38383db86365b6102829c16fc0fb49ba0517647fbb10').then((res) => {
       this.safeLow = Web3.utils.toWei((res.data.safeLow / 10).toString(), 'gwei');
       this.average = Web3.utils.toWei((res.data.average / 10).toString(), 'gwei');
       this.fast = Web3.utils.toWei((res.data.fast / 10).toString(), 'gwei');
