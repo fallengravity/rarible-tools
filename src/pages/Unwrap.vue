@@ -85,6 +85,7 @@ export default {
         .call()
         .then((res) => {
           this.balance = `${res / 1e18} WETH`;
+          this.amount = `${res / 1e18}`;
         });
     },
     async unwrap() {
