@@ -1,6 +1,16 @@
 <template>
   <q-page>
-    <!--<h5 style="margin-left: 3%;">ERC721 Costs</h5>-->
+    <div class="row text-center">
+      <div class="col-xs-12 col-sm-12" style="padding: 1%">
+        <q-btn-group outline>
+          <q-btn outline color="black">1 ETH to USD: ${{ usdValue }}</q-btn>
+          <q-btn outline color="black">Safe Low: {{ glow }} GWEI</q-btn>
+          <q-btn outline color="black">Average: {{ gaverage }} GWEI</q-btn>
+          <q-btn outline color="black">Fast: {{ gfast }} GWEI</q-btn>
+          <q-btn outline color="black">Fastest: {{ gfastest }} GWEI</q-btn>
+    </q-btn-group>
+      </div>
+    </div>
     <div class="row text-center">
       <div class="col-xs-12 col-sm-4" style="padding: 1%">
         <q-card class="my-card">
@@ -243,6 +253,10 @@ export default {
       average: 0,
       fast: 0,
       fastest: 0,
+      glow: 0,
+      gaverage: 0,
+      gfast: 0,
+      gfastest: 0,
     };
   },
   mounted() {
@@ -254,6 +268,10 @@ export default {
       this.average = Web3.utils.toWei((res.data.average / 10).toString(), 'gwei');
       this.fast = Web3.utils.toWei((res.data.fast / 10).toString(), 'gwei');
       this.fastest = Web3.utils.toWei((res.data.fastest / 10).toString(), 'gwei');
+      this.glow = (res.data.safeLow / 10);
+      this.gaverage = (res.data.average / 10);
+      this.gfast = (res.data.fast / 10);
+      this.gfastest = (res.data.fastest / 10);
     });
   },
   methods: {},
