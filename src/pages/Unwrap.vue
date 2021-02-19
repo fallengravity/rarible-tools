@@ -28,9 +28,7 @@
           <q-separator />
 
           <q-card-actions class="text-center" horizontal>
-            <q-btn class="text-center" @click="unwrap" flat
-              >Unwrap my WETH!</q-btn
-            >
+            <q-btn class="text-center" @click="unwrap" flat>Unwrap my WETH!</q-btn>
           </q-card-actions>
         </q-card>
       </div>
@@ -38,25 +36,11 @@
   </q-page>
 </template>
 <script>
-import Web3 from 'web3';
-import detectEthereumProvider from '@metamask/detect-provider';
 import wETH from '../assets/wABI.json';
 
-const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
-// const address = '0x0a180a76e4466bf68a7f86fb029bed3cccfaaac5';
-const ethEnabled = () => {
-  if (window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-    window.ethereum.enable();
-    return true;
-  }
-  return false;
-};
-if (!ethEnabled()) {
-  alert(
-    'Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!',
-  );
-}
+// const address = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'; Production
+const address = '0x0a180a76e4466bf68a7f86fb029bed3cccfaaac5';
+
 export default {
   name: 'Unwrap',
   data() {
@@ -69,41 +53,31 @@ export default {
     };
   },
   mounted() {
-    this.getAccounts();
+    this.init();
   },
   methods: {
-    async getAccounts() {
-      this.provider = await detectEthereumProvider();
-      this.userAccount = await this.provider.request({
-        method: 'eth_requestAccounts',
-      });
+    async init() {
+      await this.$API.onboard.walletSelect();
+      await this.$API.onboard.walletCheck();
+      this.userAccount = await this.$API.web3.eth.getAccounts();
     },
     async getBalance() {
-      const contract = new window.web3.eth.Contract(wETH, address);
-      contract.methods
-        .balanceOf(this.userAccount[0])
-        .call()
-        .then((res) => {
-          this.balance = `${res / 1e18} WETH`;
-          this.amount = `${res / 1e18}`;
-        });
+      const contract = new this.$API.web3.eth.Contract(wETH, address);
+      contract.methods.balanceOf(this.userAccount[0]).call().then((res) => {
+        this.balance = `${res / 1e18} WETH`;
+        this.amount = `${res / 1e18}`;
+      });
     },
     async unwrap() {
-      const weiAmount = window.web3.utils.toWei(this.amount);
+      const weiAmount = this.$API.web3.utils.toWei(this.amount);
       console.log(`Amount in Wei: ${weiAmount}`);
-      const finalAmount = window.web3.eth.abi.encodeParameter(
-        'uint256',
-        weiAmount,
-      );
+      const finalAmount = this.$API.web3.eth.abi.encodeParameter('uint256', weiAmount);
       console.log(`Final Amount as uint256: ${finalAmount}`);
-      const contract = new window.web3.eth.Contract(wETH, address);
-      contract.methods
-        .withdraw(finalAmount)
-        .send({ from: this.userAccount[0] })
-        .then((res) => {
-          console.log(res);
-          this.getBalance();
-        });
+      const contract = new this.$API.web3.eth.Contract(wETH, address);
+      contract.methods.withdraw(finalAmount).send({ from: this.userAccount[0] }).then((res) => {
+        console.log(res);
+        this.getBalance();
+      });
     },
   },
 };

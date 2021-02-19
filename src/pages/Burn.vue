@@ -8,14 +8,14 @@
         <div class="text-subtitle2">
           Please note we can only burn items located in the default Rarible Collection.
           <q-input outlined v-model="single" label="Please Enter Token ID" style="margin-top: 2%;" />
-          <q-input disable outlined v-model="nada" label="Amount is not required for ERC 721" style="margin-top: 2%;" />
+          <q-input disable outlined v-model="notReq" label="Amount is not required for ERC 721" style="margin-top: 2%;" />
         </div>
       </q-card-section>
 
       <q-separator />
 
       <q-card-actions class="text-center" horizontal>
-        <q-btn class="text-center" @click="BurnSingle" flat>Burn</q-btn>
+        <q-btn class="text-center" @click="burnSingle" flat>Burn</q-btn>
       </q-card-actions>
     </q-card>
   </div>
@@ -33,7 +33,7 @@
   <q-separator />
 
   <q-card-actions class="text-center" horizontal>
-    <q-btn class="text-center" @click="BurnMulti" flat>Burn</q-btn>
+    <q-btn class="text-center" @click="burnMulti" flat>Burn</q-btn>
   </q-card-actions>
 </q-card>
 </div>
@@ -42,24 +42,8 @@
 </template>
 
 <script>
-import Web3 from 'web3';
-import detectEthereumProvider from '@metamask/detect-provider';
 import singleABI from '../assets/singleABI.json';
 import multiABI from '../assets/multiABI.json';
-
-const ethEnabled = () => {
-  if (window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-    window.ethereum.enable();
-    return true;
-  }
-  return false;
-};
-if (!ethEnabled()) {
-  alert(
-    'Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!',
-  );
-}
 
 export default {
   name: 'Burn',
@@ -68,69 +52,65 @@ export default {
       single: '',
       multi: '',
       amount: '',
-      nada: '',
+      notReq: '',
+      userAccount: [],
     };
   },
+  mounted() {
+    this.init();
+  },
   methods: {
-    async BurnSingle() {
-      const address = '0x60F80121C31A0d46B5279700f9DF786054aa5eE5';
-      const contract = new window.web3.eth.Contract(singleABI, address);
-      const provider = await detectEthereumProvider();
-      if (provider) {
-        const userAccount = await provider.request({
-          method: 'eth_requestAccounts',
-        });
-        const id = window.web3.eth.abi.encodeParameter(
-          'uint256',
-          this.single,
-        );
-        contract.methods
-          .burn(id)
-          .send({
-            from: userAccount[0],
-          }).then((response) => {
-            this.$q.notify('Successful');
-            console.log(response);
-          }).catch((e) => {
-            if (e.code === 4001) {
-              this.$q.notify(e.message);
-            } else {
-              this.$q.notify(`Please contact the developer with this error code: ${e.message}`);
-            }
-          });
-      }
+    async init() {
+      await this.$API.onboard.walletSelect();
+      await this.$API.onboard.walletCheck();
+      this.userAccount = await this.$API.web3.eth.getAccounts();
     },
-    async BurnMulti() {
-      const address = '0xd07dc4262bcdbf85190c01c996b4c06a461d2430';
-      const contract = new window.web3.eth.Contract(multiABI, address);
-      const provider = await detectEthereumProvider();
-      if (provider) {
-        const userAccount = await provider.request({
-          method: 'eth_requestAccounts',
-        });
-        const id = window.web3.eth.abi.encodeParameter(
-          'uint256',
-          this.multi,
-        );
-        const amountInt = window.web3.eth.abi.encodeParameter(
-          'uint256',
-          this.amount,
-        );
-        contract.methods
-          .burn(userAccount[0], id, amountInt)
-          .send({
-            from: userAccount[0],
-          }).then((response) => {
-            this.$q.notify('Successful');
-            console.log(response);
-          }).catch((e) => {
-            if (e.code === 4001) {
-              this.$q.notify(e.message);
-            } else {
-              this.$q.notify(`Please contact the developer with this error code: ${e.message}`);
-            }
-          });
-      }
+    alertSingleBurn() {
+      this.$q.dialog({
+        title: 'Burn Successful',
+        message: `Item ${this.single} was successfully destroyed.`,
+      });
+    },
+    alertMultiBurn() {
+      this.$q.dialog({
+        title: 'Burn Successful',
+        message: `${this.amount} Copies of Item ${this.multi} were successfully destroyed.`,
+      });
+    },
+    async burnSingle() {
+      const address = '0x25ec3bbc85af8b7498c8f5b1cd1c39675431a13c';
+      const contract = new this.$API.web3.eth.Contract(singleABI, address);
+      const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.single);
+      contract.methods.burn(id).send({
+        from: this.userAccount[0],
+      }).then((response) => {
+        console.log(response);
+        this.alertSingleBurn();
+      }).catch((e) => {
+        if (e.code === 4001) {
+          this.$q.notify(e.message);
+        } else {
+          this.$q.notify(`Please contact the developer with this error code: ${e.message}`);
+        }
+      });
+    },
+    async burnMulti() {
+      const address = '0x71b053bcaf286ba20d9006845412d4532a8e1f34';
+      const contract = new this.$API.web3.eth.Contract(multiABI, address);
+      const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.multi);
+      const amountInt = this.$API.web3.eth.abi.encodeParameter('uint256', this.amount);
+      contract.methods.burn(this.userAccount[0], id, amountInt).send({
+        from: this.userAccount[0],
+      }).then((response) => {
+        this.alertMultiBurn();
+        console.log(response);
+      }).catch((e) => {
+        if (e.code === 4001) {
+          this.$q.notify(e.message);
+        } else {
+          this.$q.notify(`Please contact the developer with this error code: ${e.message}`);
+        }
+      });
     },
   },
 };
