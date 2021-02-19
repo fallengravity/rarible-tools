@@ -11,6 +11,7 @@
     </q-btn-group>
       </div>
     </div>
+    <h5 style="margin: 0.5%" class="text-center"> Singles (ERC721) </h5>
     <div class="row text-center">
       <div class="col-xs-12 col-sm-4" style="padding: 1%">
         <q-card class="my-card">
@@ -115,6 +116,7 @@
         </q-card>
       </div>
     </div>
+    <h5 style="margin: 0.5%" class="text-center"> Multiples (ERC1155) </h5>
     <div class="row text-center">
       <div class="col-xs-12 col-sm-4" style="padding: 1%">
         <q-card class="my-card">
@@ -216,6 +218,22 @@
                   </q-item-section>
                 </q-item>
               </q-list>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+    <h5 style="margin: 0.5%" class="text-center"> Bidding & Purchasing </h5>
+    <div class="row text-center">
+      <div class="col-xs-12 col-sm-12" style="padding: 1%">
+        <q-card class="my-card">
+          <q-card-section>
+            <div class="text-h6">Cost of Creating a bid</div>
+            <div class="text-subtitle2">
+              <br />
+              Transaction Type: Coming soon.
+            </div>
+            <br>
+            <div class="text-h6">Coming Soon</div>
           </q-card-section>
         </q-card>
       </div>
