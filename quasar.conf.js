@@ -49,6 +49,7 @@ module.exports = function (/* ctx */) {
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       minify: true,
+      distDir: 'docs/',
 
       // transpile: false,
 
@@ -125,7 +126,7 @@ module.exports = function (/* ctx */) {
       manifest: {
         name: 'Rarible Tools',
         short_name: 'Rarible Tools',
-        description: 'A Quasar Framework app',
+        description: 'A toolset for Rarible',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
