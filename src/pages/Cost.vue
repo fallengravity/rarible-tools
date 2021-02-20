@@ -20,6 +20,8 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC721 Collection
+              <br />
+              Gas Limit Used For Calculation: 3,173,320
             </div>
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
@@ -54,6 +56,8 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC721 - Default Collection
+              <br />
+              Gas Limit Used For Calculation: 45,306
             </div>
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
@@ -88,6 +92,8 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC721 - Default Collection
+              <br />
+              Gas Limit Used For Calculation: 293,952
             </div>
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
@@ -125,6 +131,8 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC1155 Collection
+              <br />
+              Gas Limit Used For Calculation: 2,919,709
             </div>
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
@@ -159,9 +167,10 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC1155 - Default Collection
+              <br />
+              Gas Limit Used For Calculation: 45,153
             </div>
             <br>
-            <!-- 45153 -->
             <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
               <q-item clickable v-ripple>
                 <q-item-section>
@@ -194,6 +203,8 @@
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC1155 in Default Collection
+              <br />
+              Gas Limit Used For Calculation: 209,103
             </div>
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
