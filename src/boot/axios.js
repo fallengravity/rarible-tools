@@ -6,12 +6,12 @@ import Web3 from 'web3';
 const API = {};
 const apiKey = '0ee58158-e48f-492b-b7df-92554915a6b3';
 const networkId = 3;
-const FORTMATIC_KEY = 'pk_test_337C746B44B2985F'; // Change to Prod
+const FORTMATIC_KEY = 'pk_live_37D874D6AE5A87C3';
 const PORTIS_KEY = '298edcdf-0694-46fa-87df-a8bc3b2de37a';
 const INFURA_KEY = 'ad2ee80801ce45de9dd717e612c904cb';
 const APP_URL = 'https://tools.gravityenterprises.co.za';
 const CONTACT_EMAIL = 'ethan@rarible.com';
-const RPC_URL = 'https://ropsten.infura.io/v3/4ece25e8c99949f4ba77d08942399082';
+const RPC_URL = 'https://mainnet.infura.io/v3/4ece25e8c99949f4ba77d08942399082';
 const APP_NAME = 'Rarible Tools';
 const wallets = [
   {
