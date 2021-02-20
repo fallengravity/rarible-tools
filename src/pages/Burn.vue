@@ -78,7 +78,7 @@ export default {
       });
     },
     async burnSingle() {
-      const address = '0x25ec3bbc85af8b7498c8f5b1cd1c39675431a13c';
+      const address = '0x60f80121c31a0d46b5279700f9df786054aa5ee5';
       const contract = new this.$API.web3.eth.Contract(singleABI, address);
       const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.single);
       contract.methods.burn(id).send({
@@ -95,7 +95,7 @@ export default {
       });
     },
     async burnMulti() {
-      const address = '0x71b053bcaf286ba20d9006845412d4532a8e1f34';
+      const address = '0xd07dc4262bcdbf85190c01c996b4c06a461d2430';
       const contract = new this.$API.web3.eth.Contract(multiABI, address);
       const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.multi);
       const amountInt = this.$API.web3.eth.abi.encodeParameter('uint256', this.amount);
