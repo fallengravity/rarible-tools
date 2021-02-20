@@ -4,8 +4,8 @@ import Onboard from 'bnc-onboard';
 import Web3 from 'web3';
 
 const API = {};
-const apiKey = '0ee58158-e48f-492b-b7df-92554915a6b3';
-const networkId = 3;
+const apiKey = '50857081-537f-45cc-8ac2-589bddd619e3';
+const networkId = 1;
 const FORTMATIC_KEY = 'pk_live_37D874D6AE5A87C3';
 const PORTIS_KEY = '298edcdf-0694-46fa-87df-a8bc3b2de37a';
 const INFURA_KEY = 'ad2ee80801ce45de9dd717e612c904cb';
