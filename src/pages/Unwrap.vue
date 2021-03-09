@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-6" style="padding: 1%">
-        <q-card class="my-card">
+    <div class="row text-center justify-evenly q-pt-xl">
+      <div class="col-xs-12 col-sm-6 " style="padding: 1%">
+        <q-card class="my-card ">
           <q-card-section>
-            <div class="text-h6">Unwrap WETH (WETH -> ETH)</div>
-            <div class="text-subtitle2">
+            <div class="text-h6 text-deep-purple ">Unwrap WETH (WETH -> ETH)</div>
+            <div class="text-subtitle2 q-ma-xl">
               Please note we use the official WETH contract for unwrapping.
               <br />
               <q-btn

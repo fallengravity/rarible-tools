@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex flex-center">
     <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-full.svg"
+      alt="rarible tools"
+      src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png"
     >
   </q-page>
 </template>

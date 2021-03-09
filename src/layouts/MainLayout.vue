@@ -2,7 +2,7 @@
 <div class="bg font">
   <q-layout view="hHh Lpr lff">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-deep-purple">
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         <a href="/#/">
         <q-avatar>

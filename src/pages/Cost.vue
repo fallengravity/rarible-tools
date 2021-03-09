@@ -1,22 +1,22 @@
 <template>
   <q-page>
     <div class="row text-center">
-      <div class="col-xs-12 col-sm-12" style="padding: 1%">
-        <q-btn-group outline>
-          <q-btn outline color="black">1 ETH to USD: ${{ usdValue }}</q-btn>
-          <q-btn outline color="black">Safe Low: {{ glow }} GWEI</q-btn>
-          <q-btn outline color="black">Average: {{ gaverage }} GWEI</q-btn>
-          <q-btn outline color="black">Fast: {{ gfast }} GWEI</q-btn>
-          <q-btn outline color="black">Fastest: {{ gfastest }} GWEI</q-btn>
+      <div class="col-xs-12 col-sm-12 " style="padding: 1%">
+        <q-btn-group outline class="q-ma-xl">
+          <q-btn outline color="white" class="q-pa-md">1 ETH to USD: ${{ usdValue }}</q-btn>
+          <q-btn outline color="red" class="q-pa-md">Safe Low: {{ glow }} GWEI</q-btn>
+          <q-btn outline color="orange" class="q-pa-md">Average: {{ gaverage }} GWEI</q-btn>
+          <q-btn outline color="yellow" class="q-pa-md">Fast: {{ gfast }} GWEI</q-btn>
+          <q-btn outline color="green" class="q-pa-md">Fastest: {{ gfastest }} GWEI</q-btn>
     </q-btn-group>
       </div>
     </div>
-    <h5 style="margin: 0.5%" class="text-center"> Singles (ERC721) </h5>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+    <h5 style="margin: 0.5%" class="text-center text-white"> Singles (ERC721) </h5>
+    <div class="row text-center justify-evenly q-ma-xl">
+      <div class="col-sm-3" style="padding: 1%">
+        <q-card class="my-card q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Creating Unique ERC721 Collection:</div>
+            <div class="text-h6 text-deep-purple">Cost of Creating Unique ERC721 Collection:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC721 Collection
@@ -49,10 +49,10 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+      <div class="col-sm-3" style="padding: 1%">
+        <q-card class="my-card q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Minting ERC721 in the default collection for the first time:</div>
+            <div class="text-h6 text-deep-purple">Cost of Minting ERC721 in the default collection for the first time:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC721 - Default Collection
@@ -85,10 +85,10 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+      <div class=" col-sm-3" style="padding: 1%">
+        <q-card class="my-card  q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Minting ERC721 in the default collection after approval:</div>
+            <div class="text-h6 text-deep-purple">Cost of Minting ERC721 in the default collection after approval:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC721 - Default Collection
@@ -122,12 +122,12 @@
         </q-card>
       </div>
     </div>
-    <h5 style="margin: 0.5%" class="text-center"> Multiples (ERC1155) </h5>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+    <h5 style="margin: 0.5%" class="text-center text-white q-pt-xl"> Multiples (ERC1155) </h5>
+    <div class="row text-center justify-evenly q-mt-xl">
+      <div class=" col-sm-3" style="padding: 1%">
+        <q-card class="my-card  q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Creating Unique ERC1155 Collection:</div>
+            <div class="text-h6 text-deep-purple">Cost of Creating Unique ERC1155 Collection:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC1155 Collection
@@ -160,10 +160,10 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+      <div class=" col-sm-3" style="padding: 1%">
+        <q-card class="my-card  q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Minting ERC1155 in the default collection for the first time:</div>
+            <div class="text-h6 text-deep-purple">Cost of Minting ERC1155 in the default collection for the first time:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC1155 - Default Collection
@@ -196,10 +196,10 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-xs-12 col-sm-4" style="padding: 1%">
-        <q-card class="my-card">
+      <div class=" col-sm-3" style="padding: 1%">
+        <q-card class="my-card  q-pa-lg">
           <q-card-section>
-            <div class="text-h6">Cost of Minting ERC1155 in the default collection after approval:</div>
+            <div class="text-h6 text-deep-purple">Cost of Minting ERC1155 in the default collection after approval:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC1155 in Default Collection
@@ -233,12 +233,12 @@
         </q-card>
       </div>
     </div>
-    <h5 style="margin: 0.5%" class="text-center"> Bidding & Purchasing </h5>
+    <h5 style="margin: 0.5%" class="text-center text-white q-pt-xl"> Bidding & Purchasing </h5>
     <div class="row text-center">
       <div class="col-xs-12 col-sm-12" style="padding: 1%">
-        <q-card class="my-card">
+        <q-card class="my-card ">
           <q-card-section>
-            <div class="text-h6">Cost of Creating a bid</div>
+            <div class="text-h6 text-deep-purple">Cost of Creating a bid</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Coming soon.
