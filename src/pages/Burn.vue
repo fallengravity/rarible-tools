@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-6" style="padding: 1%;">
-    <q-card class="my-card">
+    <div class="row text-center justify-evenly q-pt-xl">
+      <div class="col-xs-12 col-sm-5" style="padding: 1%;">
+    <q-card class="my-card q-pa-lg">
       <q-card-section>
-        <div class="text-h6">Burn ERC721</div>
+        <div class="text-h6 text-deep-purple">Burn ERC721</div>
         <div class="text-subtitle2">
           Please note we can only burn items located in the default Rarible Collection.
           <q-input outlined v-model="single" label="Please Enter Token ID" style="margin-top: 2%;" />
@@ -15,14 +15,14 @@
       <q-separator />
 
       <q-card-actions class="text-center" horizontal>
-        <q-btn class="text-center" @click="burnSingle" flat>Burn</q-btn>
+        <q-btn class="text-center" @click="burnSingle" flat><q-icon class="q-pa-sm text-red" name="fas fa-fire" /> Burn</q-btn>
       </q-card-actions>
     </q-card>
   </div>
-  <div class="col-xs-12 col-sm-6" style="padding: 1%;">
-    <q-card class="my-card">
+  <div class="col-xs-12 col-sm-5" style="padding: 1%;">
+    <q-card class="my-card q-pa-lg">
   <q-card-section>
-    <div class="text-h6">Burn ERC1155</div>
+    <div class="text-h6 text-deep-purple">Burn ERC1155</div>
     <div class="text-subtitle2">
       Please note we can only burn items located in the default Rarible Collection.
       <q-input outlined v-model="multi" label="Please Enter Token ID" style="margin-top: 2%;" />
@@ -33,7 +33,7 @@
   <q-separator />
 
   <q-card-actions class="text-center" horizontal>
-    <q-btn class="text-center" @click="burnMulti" flat>Burn</q-btn>
+    <q-btn class="text-center" @click="burnMulti" flat><q-icon class="q-pa-sm text-red" name="fas fa-fire" /> Burn </q-btn>
   </q-card-actions>
 </q-card>
 </div>
