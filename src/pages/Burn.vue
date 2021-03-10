@@ -2,17 +2,20 @@
   <q-page>
     <div class="row text-center justify-evenly q-pt-xl">
       <div class="col-xs-12 col-sm-5" style="padding: 1%;">
-    <q-card class="my-card q-pa-lg">
+    <q-card class="my-card q-pa-lg ">
       <q-card-section>
-        <div class="text-h6 text-deep-purple">Burn ERC721</div>
-        <div class="text-subtitle2">
+        <div class="text-h6 text-orange-10">Burn ERC721</div>
+        <div class="text-subtitle2 q-mt-lg">
           Please note we can only burn items located in the default Rarible Collection.
-          <q-input outlined v-model="single" label="Please Enter Token ID" style="margin-top: 2%;" />
-          <q-input disable outlined v-model="notReq" label="Amount is not required for ERC 721" style="margin-top: 2%;" />
+          <br>
+          <br>
+          <q-input dark outlined v-model="single" label="Please Enter Token ID" style="margin-top: 2%;" />
+          <q-input dark disable outlined v-model="notReq" label="Amount is not required for ERC 721" style="margin-top: 2%;" />
+          <br>
         </div>
       </q-card-section>
 
-      <q-separator />
+      <q-separator dark />
 
       <q-card-actions class="text-center" horizontal>
         <q-btn class="text-center" @click="burnSingle" flat><q-icon class="q-pa-sm text-red" name="fas fa-fire" /> Burn</q-btn>
@@ -22,15 +25,18 @@
   <div class="col-xs-12 col-sm-5" style="padding: 1%;">
     <q-card class="my-card q-pa-lg">
   <q-card-section>
-    <div class="text-h6 text-deep-purple">Burn ERC1155</div>
-    <div class="text-subtitle2">
+    <div class="text-h6 text-orange-10">Burn ERC1155</div>
+    <div class="text-subtitle2 q-mt-lg">
       Please note we can only burn items located in the default Rarible Collection.
-      <q-input outlined v-model="multi" label="Please Enter Token ID" style="margin-top: 2%;" />
-      <q-input outlined v-model="amount" label="Please Enter The Amount to Burn" style="margin-top: 2%;" />
+      <br>
+      <br>
+      <q-input dark outlined v-model="multi" label="Please Enter Token ID" style="margin-top: 2%;" />
+      <q-input dark outlined v-model="amount" label="Please Enter The Amount to Burn" style="margin-top: 2%;" />
+      <br>
     </div>
   </q-card-section>
 
-  <q-separator />
+  <q-separator dark />
 
   <q-card-actions class="text-center" horizontal>
     <q-btn class="text-center" @click="burnMulti" flat><q-icon class="q-pa-sm text-red" name="fas fa-fire" /> Burn </q-btn>

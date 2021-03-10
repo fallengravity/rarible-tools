@@ -1,8 +1,8 @@
 <template>
   <q-page>
     <div class="row text-center">
-      <div class="col-xs-12 col-sm-12 " style="padding: 1%">
-        <q-btn-group outline class="q-ma-xl">
+      <div class="col-xs-12 col-sm-12" style="padding: 1%">
+        <q-btn-group outline class="q-ma-xl" dark>
           <q-btn outline color="white" class="q-pa-md">1 ETH to USD: ${{ usdValue }}</q-btn>
           <q-btn outline color="red" class="q-pa-md">Safe Low: {{ glow }} GWEI</q-btn>
           <q-btn outline color="orange" class="q-pa-md">Average: {{ gaverage }} GWEI</q-btn>
@@ -14,9 +14,9 @@
     <h5 style="margin: 0.5%" class="text-center text-white"> Singles (ERC721) </h5>
     <div class="row text-center justify-evenly q-ma-xl">
       <div class="col-sm-3" style="padding: 1%">
-        <q-card class="my-card q-pa-lg">
+        <q-card class="my-card shadow-12 q-pa-lg">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Creating Unique ERC721 Collection:</div>
+            <div class="text-h6 text-orange-10">Cost of Creating Unique ERC721 Collection:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC721 Collection
@@ -24,9 +24,9 @@
               Gas Limit Used For Calculation: 3,173,320
             </div>
             <br>
-              <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
+              <q-list style="margin-top: 1%" dark dense bordered padding class="rounded-borders text-left">
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-orange">
                     Safe Low: {{ (safeLow * 3173320) / 1e18 }} ETH || ${{ (((safeLow * 3173320) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -36,11 +36,11 @@
                 </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-green">
                     Fast: {{ (fast * 3173320) / 1e18 }} ETH || ${{ (((fast * 3173320) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple>
+                <q-item clickable v-ripple class="text-blue">
                   <q-item-section>
                     Fastest: {{ (fastest * 3173320) / 1e18 }} ETH || ${{ (((fastest * 3173320) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
@@ -50,9 +50,9 @@
         </q-card>
       </div>
       <div class="col-sm-3" style="padding: 1%">
-        <q-card class="my-card q-pa-lg">
+        <q-card class="my-card q-pa-lg shadow-12">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Minting ERC721 in the default collection for the first time:</div>
+            <div class="text-h6 text-orange-10">Cost of Minting ERC721 in the default collection for the first time:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC721 - Default Collection
@@ -60,9 +60,9 @@
               Gas Limit Used For Calculation: 45,306
             </div>
             <br>
-              <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
+              <q-list style="margin-top: 1%" dark dense bordered padding class="rounded-borders text-left">
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-orange">
                     Safe Low: {{ (safeLow * 45306) / 1e18 }} ETH || ${{ (((safeLow * 45306) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -72,12 +72,12 @@
                 </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-green">
                     Fast: {{ (fast * 45306) / 1e18 }} ETH || ${{ (((fast * 45306) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-blue">
                     Fastest: {{ (fastest * 45306) / 1e18 }} ETH || ${{ (((fastest * 45306) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -86,9 +86,9 @@
         </q-card>
       </div>
       <div class=" col-sm-3" style="padding: 1%">
-        <q-card class="my-card  q-pa-lg">
+        <q-card class="my-card  q-pa-lg shadow-12">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Minting ERC721 in the default collection after approval:</div>
+            <div class="text-h6 text-orange-10">Cost of Minting ERC721 in the default collection after approval:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC721 - Default Collection
@@ -96,9 +96,9 @@
               Gas Limit Used For Calculation: 293,952
             </div>
             <br>
-              <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
+              <q-list style="margin-top: 1%" dark dense bordered padding class="rounded-borders text-left">
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-orange">
                     Safe Low: {{ (safeLow * 293952) / 1e18 }} ETH || ${{ (((safeLow * 293952) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -108,12 +108,12 @@
                 </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-green">
                     Fast: {{ (fast * 293952) / 1e18 }} ETH || ${{ (((fast * 293952) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-blue">
                     Fastest: {{ (fastest * 293952) / 1e18 }} ETH || ${{ (((fastest * 293952) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -125,9 +125,9 @@
     <h5 style="margin: 0.5%" class="text-center text-white q-pt-xl"> Multiples (ERC1155) </h5>
     <div class="row text-center justify-evenly q-mt-xl">
       <div class=" col-sm-3" style="padding: 1%">
-        <q-card class="my-card  q-pa-lg">
+        <q-card class="my-card shadow-12 q-pa-lg">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Creating Unique ERC1155 Collection:</div>
+            <div class="text-h6 text-orange-10">Cost of Creating Unique ERC1155 Collection:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Deploy Custom ERC1155 Collection
@@ -137,7 +137,7 @@
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-orange">
                     Safe Low: {{ (safeLow * 2919709) / 1e18 }} ETH || ${{ (((safeLow * 2919709) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -147,12 +147,12 @@
                 </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-green">
                     Fast: {{ (fast * 2919709) / 1e18 }} ETH || ${{ (((fast * 2919709) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-blue">
                     Fastest: {{ (fastest * 2919709) / 1e18 }} ETH || ${{ (((fastest * 2919709) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -161,9 +161,9 @@
         </q-card>
       </div>
       <div class=" col-sm-3" style="padding: 1%">
-        <q-card class="my-card  q-pa-lg">
+        <q-card class="my-card shadow-12 q-pa-lg">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Minting ERC1155 in the default collection for the first time:</div>
+            <div class="text-h6 text-orange-10">Cost of Minting ERC1155 in the default collection for the first time:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC1155 - Default Collection
@@ -173,7 +173,7 @@
             <br>
             <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
               <q-item clickable v-ripple>
-                <q-item-section>
+                <q-item-section class="text-orange">
                   Safe Low: {{ (safeLow * 45153) / 1e18 }} ETH || ${{ (((safeLow * 45153) / 1e18) * usdValue).toFixed(2) }}
                 </q-item-section>
               </q-item>
@@ -183,12 +183,12 @@
               </q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>
+                <q-item-section class="text-green">
                   Fast: {{ (fast * 45153) / 1e18 }} ETH || ${{ (((fast * 45153) / 1e18) * usdValue).toFixed(2) }}
                 </q-item-section>
               </q-item>
               <q-item clickable v-ripple>
-                <q-item-section>
+                <q-item-section class="text-blue">
                   Fastest: {{ (fastest * 45153) / 1e18 }} ETH || ${{ (((fastest * 45153) / 1e18) * usdValue).toFixed(2) }}
                 </q-item-section>
               </q-item>
@@ -197,9 +197,9 @@
         </q-card>
       </div>
       <div class=" col-sm-3" style="padding: 1%">
-        <q-card class="my-card  q-pa-lg">
+        <q-card class="my-card shadow-12 q-pa-lg">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Minting ERC1155 in the default collection after approval:</div>
+            <div class="text-h6 text-orange-10">Cost of Minting ERC1155 in the default collection after approval:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Mint ERC1155 in Default Collection
@@ -209,7 +209,7 @@
             <br>
               <q-list style="margin-top: 1%" dense bordered padding class="rounded-borders text-left">
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-orange">
                     Safe Low: {{ (safeLow * 209103) / 1e18 }} ETH || ${{ (((safeLow * 209103) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -219,12 +219,12 @@
                 </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section class="text-green">
                     Fast: {{ (fast * 209103) / 1e18 }} ETH || ${{ (((fast * 209103) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple>
-                  <q-item-section>
+                  <q-item-section  class="text-blue">
                     Fastest: {{ (fastest * 209103) / 1e18 }} ETH || ${{ (((fastest * 209103) / 1e18) * usdValue).toFixed(2) }}
                   </q-item-section>
                 </q-item>
@@ -234,11 +234,11 @@
       </div>
     </div>
     <h5 style="margin: 0.5%" class="text-center text-white q-pt-xl"> Bidding & Purchasing </h5>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-12" style="padding: 1%">
-        <q-card class="my-card ">
+    <div class="row text-center justify-evenly q-mt-xl q-mb-xl">
+      <div class="col-xs-12 col-sm-6 " style="padding: 1%">
+        <q-card class="my-card shadow-12">
           <q-card-section>
-            <div class="text-h6 text-deep-purple">Cost of Creating a bid</div>
+            <div class="text-h6 text-orange-10">Cost of Creating a bid</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Coming soon.
