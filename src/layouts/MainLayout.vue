@@ -6,11 +6,11 @@
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         <a href="/#/">
         <q-avatar>
-          <!--<img src="../assets/logocf.svg">-->
+          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png" alt="">
         </q-avatar>
         </a>
         <q-toolbar-title v-if="!$q.platform.is.mobile">
-          Rarible Tools
+          Tools
         </q-toolbar-title>
 
         <div>

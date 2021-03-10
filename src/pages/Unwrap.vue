@@ -4,19 +4,20 @@
       <div class="col-xs-12 col-sm-6 " style="padding: 1%">
         <q-card class="my-card ">
           <q-card-section>
-            <div class="text-h6 text-deep-purple ">Unwrap WETH (WETH -> ETH)</div>
-            <div class="text-subtitle2 q-ma-xl">
+            <div class="text-h6 text-orange-10 q-mt-lg">Unwrap WETH (WETH -> ETH)</div>
+            <div class="text-subtitle2 q-ma-lg">
               Please note we use the official WETH contract for unwrapping.
               <br />
               <q-btn
                 push
-                color="white"
+                color="dark"
                 @click="getBalance"
-                text-color="primary"
+                text-color="white"
                 :label="balance"
-                style="margin: 1%"
+                style="margin: 3%"
               ></q-btn>
               <q-input
+              dark
                 outlined
                 v-model="amount"
                 label="Please Enter Amount of WETH to Unwrap"
@@ -25,10 +26,11 @@
             </div>
           </q-card-section>
 
-          <q-separator />
+          <q-separator dark/>
 
           <q-card-actions class="text-center" horizontal>
-            <q-btn class="text-center" @click="unwrap" flat>Unwrap my WETH!</q-btn>
+            <q-icon class="q-pa-sm text-red q-ml-lg" name="fas fa-box-open" />
+            <q-btn class="text-center" @click="unwrap" flat> Unwrap my WETH!</q-btn>
           </q-card-actions>
         </q-card>
       </div>
