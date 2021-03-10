@@ -26,3 +26,18 @@ html {
   border: solid 2px transparent;
   background-clip: padding-box;
 }
+
+.q-drawer {
+  margin: 2em;
+  padding: 2em;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+}
+
+.q-drawer a:hover {
+  color: orange;
+}

@@ -6,7 +6,7 @@
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         <a href="/#/">
         <q-avatar>
-          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png" alt="">
         </q-avatar>
         </a>
         <q-toolbar-title v-if="!$q.platform.is.mobile">
@@ -30,7 +30,6 @@
               </q-item-section>
             </q-item>
           </router-link>
-          <q-separator />
           <router-link to="/Burn">
             <q-item v-ripple>
               <q-item-section avatar>
@@ -41,11 +40,10 @@
               </q-item-section>
             </q-item>
           </router-link>
-          <q-separator />
           <router-link to="/Unwrap">
             <q-item v-ripple>
               <q-item-section avatar>
-                <q-icon name="fas fa-adjust" />
+                <q-icon name="fas fa-box-open" />
               </q-item-section>
               <q-item-section>
                 Unwrap
