@@ -49,6 +49,7 @@ module.exports = function (/* ctx */) {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       minify: true,
       distDir: 'docs/',
+      sourceMap: true,
 
       // transpile: false,
 

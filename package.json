@@ -1,7 +1,7 @@
 {
   "name": "rarible-tools",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "A Simple & Beautiful Toolset for Rarible",
   "productName": "Rarible Tools",
   "author": "fallengravity <ethanvb55@gmail.com>",
   "private": true,

@@ -3,8 +3,8 @@
   <q-layout view="hHh Lpr lff">
     <q-header elevated>
       <q-toolbar class="bg-deep-purple">
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
-        <a href="/#/">
+        <q-btn flat @click="drawer = !drawer" name="Open/Close Drawer" round dense icon="menu" />
+        <a href="/#/" name="Link To Home">
         <q-avatar>
           <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png" alt="">
         </q-avatar>
@@ -62,10 +62,10 @@
           </router-link>
         </q-list>
          <q-item class="names">
-            Created by <a href="https://github.com/fallengravity" target="_blank" class="text-pink">&nbsp;Ethan</a>
+            Created by <a href="https://github.com/fallengravity" name="Creators Github" rel="noreferrer" target="_blank" class="text-pink">&nbsp;Ethan</a>
           </q-item>
           <q-item class="namess">
-            Designed by <a href="https://twitter.com/wwh_daniel" target="_blank" class="text-pink">&nbsp;Daniel</a>
+            Designed by <a href="https://twitter.com/wwh_daniel" name="Designers Twitter" rel="noreferrer" target="_blank" class="text-pink">&nbsp;Daniel</a>
           </q-item>
       </q-scroll-area>
     </q-drawer>
