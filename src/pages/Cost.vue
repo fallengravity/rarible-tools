@@ -252,7 +252,7 @@
   </q-page>
 </template>
 <script>
-import Web3 from 'web3';
+import utils from 'web3-utils';
 
 export default {
   name: 'Unwrap',
@@ -279,16 +279,15 @@ export default {
       this.usdValue = result.data.ethereum.usd;
     });
     this.$axios.get('https://data-api.defipulse.com/api/v1/egs/api/ethgasAPI.json?api-key=09d37849af10812f38383db86365b6102829c16fc0fb49ba0517647fbb10').then((res) => {
-      this.safeLow = Web3.utils.toWei((res.data.safeLow / 10).toString(), 'gwei');
-      this.average = Web3.utils.toWei((res.data.average / 10).toString(), 'gwei');
-      this.fast = Web3.utils.toWei((res.data.fast / 10).toString(), 'gwei');
-      this.fastest = Web3.utils.toWei((res.data.fastest / 10).toString(), 'gwei');
+      this.safeLow = utils.toWei((res.data.safeLow / 10).toString(), 'gwei');
+      this.average = utils.toWei((res.data.average / 10).toString(), 'gwei');
+      this.fast = utils.toWei((res.data.fast / 10).toString(), 'gwei');
+      this.fastest = utils.toWei((res.data.fastest / 10).toString(), 'gwei');
       this.glow = (res.data.safeLow / 10);
       this.gaverage = (res.data.average / 10);
       this.gfast = (res.data.fast / 10);
       this.gfastest = (res.data.fastest / 10);
     });
   },
-  methods: {},
 };
 </script>
