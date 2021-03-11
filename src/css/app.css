@@ -4,7 +4,7 @@ a {
 }
 
 html {
-  background: url("https://cdn.wallpapersafari.com/94/67/Q0lqza.jpeg");
+  background: url("../assets/bg.webp");
   background-size: cover;
   color: rgba(255, 255, 255, 0.8);
 }

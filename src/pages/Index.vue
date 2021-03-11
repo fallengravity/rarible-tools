@@ -2,7 +2,8 @@
   <q-page class="flex flex-center">
     <img
       alt="rarible tools"
-      src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png"
+      src="../assets/logo.webp"
+      rel="preconnect"
     >
   </q-page>
 </template>

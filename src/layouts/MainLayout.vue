@@ -6,7 +6,7 @@
         <q-btn flat @click="drawer = !drawer" name="Open/Close Drawer" round dense icon="menu" />
         <a href="/#/" name="Link To Home">
         <q-avatar>
-          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5877.png" alt="">
+          <img src="../assets/logo.webp" rel="preconnect" alt="Logo">
         </q-avatar>
         </a>
         <q-toolbar-title v-if="!$q.platform.is.mobile">
