@@ -52,7 +52,7 @@
       <div class="col-sm-3" style="padding: 1%">
         <q-card class="my-card q-pa-lg shadow-12">
           <q-card-section>
-            <div class="text-h6 text-orange-10">Cost of Minting ERC721 in the default collection for the first time:</div>
+            <div class="text-h6 text-orange-10">Cost of Approving Minting for ERC721:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC721 - Default Collection
@@ -163,7 +163,7 @@
       <div class=" col-sm-3" style="padding: 1%">
         <q-card class="my-card shadow-12 q-pa-lg">
           <q-card-section>
-            <div class="text-h6 text-orange-10">Cost of Minting ERC1155 in the default collection for the first time:</div>
+            <div class="text-h6 text-orange-10">Cost of Approving Minting for ERC1155:</div>
             <div class="text-subtitle2">
               <br />
               Transaction Type: Approve ERC1155 - Default Collection
