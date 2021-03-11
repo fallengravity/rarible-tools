@@ -61,6 +61,12 @@
             </q-item>
           </router-link>
         </q-list>
+         <q-item class="names">
+            Created by <router-link to="https://github.com/fallengravity" class="text-pink">&nbsp;Ethan</router-link>
+          </q-item>
+          <q-item class="namess">
+            Designed by <router-link to="https://twitter.com/wwh_daniel" class="text-pink">&nbsp;Daniel</router-link>
+          </q-item>
       </q-scroll-area>
     </q-drawer>
     <q-page-container>
