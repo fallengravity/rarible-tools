@@ -40,16 +40,6 @@
               </q-item-section>
             </q-item>
           </router-link>
-          <router-link to="/Unwrap">
-            <q-item v-ripple>
-              <q-item-section avatar>
-                <q-icon name="fas fa-box-open" />
-              </q-item-section>
-              <q-item-section>
-                Unwrap
-              </q-item-section>
-            </q-item>
-          </router-link>
           <router-link to="/Cost">
             <q-item v-ripple>
               <q-item-section avatar>
@@ -57,6 +47,26 @@
               </q-item-section>
               <q-item-section>
                 Cost
+              </q-item-section>
+            </q-item>
+          </router-link>
+          <router-link to="/Viewer">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-search" />
+              </q-item-section>
+              <q-item-section>
+                Viewer
+              </q-item-section>
+            </q-item>
+          </router-link>
+          <router-link to="/Unwrap">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-box-open" />
+              </q-item-section>
+              <q-item-section>
+                Unwrap
               </q-item-section>
             </q-item>
           </router-link>
