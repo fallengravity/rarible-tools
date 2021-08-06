@@ -70,7 +70,7 @@
               </q-item-section>
             </q-item>
           </router-link>
-          <router-link to="/Unloackable">
+          <router-link to="/Unlockable">
             <q-item v-ripple>
               <q-item-section avatar>
                 <q-icon name="fas fa-lock-open" />
