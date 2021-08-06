@@ -70,6 +70,16 @@
               </q-item-section>
             </q-item>
           </router-link>
+          <router-link to="/Unloackable">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-lock-open" />
+              </q-item-section>
+              <q-item-section>
+                Unlockable Content
+              </q-item-section>
+            </q-item>
+          </router-link>
         </q-list>
          <q-item class="names">
             Created by <a href="https://github.com/fallengravity" name="Creators Github" rel="noreferrer" target="_blank" class="text-pink">&nbsp;Ethan</a>

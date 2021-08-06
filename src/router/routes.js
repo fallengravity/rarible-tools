@@ -8,6 +8,7 @@ const routes = [
       { path: 'Cost', component: () => import('pages/Cost.vue') },
       { path: 'Viewer', component: () => import('pages/ItemView.vue') },
       { path: 'Unwrap', component: () => import('pages/Unwrap.vue') },
+      { path: 'Unlockable', component: () => import('pages/Unlockable.vue') },
     ],
   },
 
