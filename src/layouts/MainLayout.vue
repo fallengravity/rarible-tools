@@ -13,6 +13,13 @@
           Tools
         </q-toolbar-title>
 
+        <div v-if="inited === false">
+          <q-btn color="white" text-color="black" label="Sign In" @click="init" />
+        </div>
+        <div v-else>
+          Version: 2.1.0 - Signed in.
+        </div>
+
         <div>
         </div>
       </q-toolbar>
@@ -80,6 +87,16 @@
               </q-item-section>
             </q-item>
           </router-link>
+          <router-link to="/Mint">
+            <q-item v-ripple>
+              <q-item-section avatar>
+                <q-icon name="fas fa-lock-open" />
+              </q-item-section>
+              <q-item-section>
+                Lazy Minting
+              </q-item-section>
+            </q-item>
+          </router-link>
         </q-list>
          <q-item class="names">
             Created by <a href="https://github.com/fallengravity" name="Creators Github" rel="noreferrer" target="_blank" class="text-pink">&nbsp;Ethan</a>
@@ -97,13 +114,24 @@
 </template>
 
 <script>
-
 export default {
   name: 'MainLayout',
   data() {
     return {
       drawer: false,
+      inited: false,
     };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      if (this.$API.userAccount === undefined) {
+        await this.$API.init();
+        this.inited = true;
+      }
+    },
   },
 };
 </script>

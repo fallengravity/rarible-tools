@@ -59,13 +59,14 @@ export default {
   },
   methods: {
     async init() {
-      await this.$API.onboard.walletSelect();
-      await this.$API.onboard.walletCheck();
-      this.userAccount = await this.$API.web3.eth.getAccounts();
+      if (this.$API.userAccount === undefined) {
+        await this.$API.init();
+        this.CheckChainData();
+      }
     },
     async getBalance() {
       const contract = new this.$API.web3.eth.Contract(wETH, address);
-      contract.methods.balanceOf(this.userAccount[0]).call().then((res) => {
+      contract.methods.balanceOf(this.$API.userAccount[0]).call().then((res) => {
         this.balance = `${res / 1e18} WETH`;
         this.amount = `${res / 1e18}`;
       });
@@ -76,7 +77,7 @@ export default {
       const finalAmount = this.$API.web3.eth.abi.encodeParameter('uint256', weiAmount);
       console.log(`Final Amount as uint256: ${finalAmount}`);
       const contract = new this.$API.web3.eth.Contract(wETH, address);
-      contract.methods.withdraw(finalAmount).send({ from: this.userAccount[0] }).then((res) => {
+      contract.methods.withdraw(finalAmount).send({ from: this.$API.userAccount[0] }).then((res) => {
         console.log(res);
         this.getBalance();
       });
