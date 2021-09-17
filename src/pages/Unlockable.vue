@@ -41,12 +41,13 @@ export default {
   },
   methods: {
     async init() {
-      await this.$API.onboard.walletSelect();
-      await this.$API.onboard.walletCheck();
-      this.userAccount = await this.$API.web3.eth.getAccounts();
+      if (this.$API.userAccount === undefined) {
+        await this.$API.init();
+        this.CheckChainData();
+      }
     },
     createUnlockable() {
-      this.$API.web3.eth.personal.sign(`I would like to set lock for ${this.collection}:${this.tokenId}. content is ${this.content}`, `${this.userAccount[0]}`).then((result) => {
+      this.$API.web3.eth.personal.sign(`I would like to set lock for ${this.collection}:${this.tokenId}. content is ${this.content}`, `${this.$API.userAccount[0]}`).then((result) => {
         this.$axios.post(`https://api-mainnet.rarible.com/marketplace/api/v3/items/${this.collection}%3A${this.tokenId}/lock`, {
           signature: result,
           content: `${this.content}`,

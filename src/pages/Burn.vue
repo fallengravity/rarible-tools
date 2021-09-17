@@ -67,9 +67,10 @@ export default {
   },
   methods: {
     async init() {
-      await this.$API.onboard.walletSelect();
-      await this.$API.onboard.walletCheck();
-      this.userAccount = await this.$API.web3.eth.getAccounts();
+      if (this.$API.userAccount === undefined) {
+        await this.$API.init();
+        this.CheckChainData();
+      }
     },
     alertSingleBurn() {
       this.$q.dialog({
@@ -88,7 +89,7 @@ export default {
       const contract = new this.$API.web3.eth.Contract(singleABI, address);
       const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.single);
       contract.methods.burn(id).send({
-        from: this.userAccount[0],
+        from: this.$API.userAccount[0],
       }).then((response) => {
         console.log(response);
         this.alertSingleBurn();
@@ -105,8 +106,8 @@ export default {
       const contract = new this.$API.web3.eth.Contract(multiABI, address);
       const id = this.$API.web3.eth.abi.encodeParameter('uint256', this.multi);
       const amountInt = this.$API.web3.eth.abi.encodeParameter('uint256', this.amount);
-      contract.methods.burn(this.userAccount[0], id, amountInt).send({
-        from: this.userAccount[0],
+      contract.methods.burn(this.$API.userAccount[0], id, amountInt).send({
+        from: this.$API.userAccount[0],
       }).then((response) => {
         this.alertMultiBurn();
         console.log(response);
