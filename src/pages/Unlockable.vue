@@ -47,7 +47,7 @@ export default {
     },
     createUnlockable() {
       this.$API.web3.eth.personal.sign(`I would like to set lock for ${this.collection}:${this.tokenId}. content is ${this.content}`, `${this.userAccount[0]}`).then((result) => {
-        this.$axios.post(`https://api-staging.rarible.com/protocol/v0.1/ethereum/unlockable/item/${this.collection}%3A${this.tokenId}/lock`, {
+        this.$axios.post(`https://api.rarible.com/protocol/v0.1/ethereum/unlockable/item/${this.collection}%3A${this.tokenId}/lock`, {
           signature: result,
           content: `${this.content}`,
         }).then((response) => {
